@@ -2,8 +2,11 @@
 
 namespace App;
 
-use frasma\Router;
+use Frasma\Router;
+use App\Controllers\HeartbeartController;
+
 
 //HeartbeatController
-Router::route(GET, '/heartbeat', 'HeartbeatController', 'ping');
+Router::route(GET, '/heartbeat', "App\Controllers\HeartbeartController", 'ping');
 
+//$verb, $pattern, $class, $method)

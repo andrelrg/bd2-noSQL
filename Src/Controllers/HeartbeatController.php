@@ -1,9 +1,11 @@
 <?php
 
-use frasma\Controller;
-
 namespace App\Controllers;
 
-class HeartbeartController extends Controller {
+use Frasma\Controller;
 
+class HeartbeartController extends Controller {
+    public function ping(){
+        return $this->success("pong");
+    } 
 }
