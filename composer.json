@@ -1,6 +1,7 @@
 {
     "require" :{
-        "andrelrg/frasma-php": "dev-master"
+        "andrelrg/frasma-php": "dev-master",
+        "ext-json": "*"
     },
     "autoload": {
         "psr-4": {

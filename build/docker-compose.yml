@@ -43,6 +43,13 @@ services:
             main:
                 aliases:
                     - php
+
+    redis:
+        image: redis
+        networks:
+            main:
+                aliases:
+                    - redis
 networks:
     main:
         external: true

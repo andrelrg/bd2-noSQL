@@ -2,8 +2,10 @@
 
 namespace Settings;
 
-class Teste{
-    public static function teste(){
-        echo "rola";
+class Settings{
+
+    public static function getSettings(): array {
+        $str  = file_get_contents(dirname(__FILE__).'/config.json');
+        return json_decode($str, true);
     }
 }
