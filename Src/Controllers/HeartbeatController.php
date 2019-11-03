@@ -4,8 +4,10 @@ namespace App\Controllers;
 
 use Frasma\Controller;
 
-class HeartbeartController extends Controller {
+class HeartbeatController extends Controller {
+
     public function ping(){
-        return $this->success("pong");
-    } 
+        return $this->successContent(array("success"=>true));
+    }
+
 }
