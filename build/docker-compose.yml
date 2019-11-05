@@ -28,7 +28,7 @@ services:
                 aliases:
                     - nginx
     php:
-        image: php:7.1-fpm
+        image: astrocontrol01:5000/dev_astweb_php:fix_hour_bahia
         volumes:
             - type: bind
               source: ../
