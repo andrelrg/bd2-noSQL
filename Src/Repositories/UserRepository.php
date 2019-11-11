@@ -13,7 +13,14 @@ class UserRepository extends Repository
 
     public function get(string $email): array{
         $this->orm
-            ->fields("*")
+            ->fields("usu_id as Id",
+                "usu_ultimoacesso as LastAccess",
+                "usu_email as Email",
+                "usu_nome as Name",
+                "usu_pais as Country",
+                "usu_estado as State",
+                "usu_cidade as City",
+                "gender as Gender")
             ->where(ORM::equals('usu_email', "'$email'"))
             ->getTo($result);
         return $result;

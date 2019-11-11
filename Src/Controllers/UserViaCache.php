@@ -20,7 +20,7 @@ class UserViaCache extends Controller
         $executionStartTime = microtime(true);
         try{
             $r = new Redis();
-            $result = $r->get("cache" . $email);
+            $result = $r->get("cache_".$email);
         }catch (\Exception $e){
             return $this->fail();
         }
@@ -28,7 +28,7 @@ class UserViaCache extends Controller
 
         $seconds = $executionEndTime - $executionStartTime;
 
-        $ret = array("result" => json_encode($result), "elapsedTime" => $seconds);
+        $ret = array("result" => json_decode($result, true), "elapsedTime" => $seconds);
         return $this->success($ret);
     }
 }
