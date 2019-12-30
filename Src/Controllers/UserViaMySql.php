@@ -19,14 +19,15 @@ class UserViaMySql extends Controller
         $email = $this->get["email"];
 
         $executionStartTime = microtime(true);
+
         $user = new UserRepository();
         $result = $user->get($email);
-        $executionEndTime = microtime(true);
 
+        $executionEndTime = microtime(true);
         $seconds = $executionEndTime - $executionStartTime;
 
         $r = new Redis();
-        $r->set("cache_".$email, json_encode($result), 1);
+        $r->set("cache_".$email, json_encode($result), 60);
 
         $ret = array("result" => $result, "elapsedTime" => $seconds);
         return $this->success($ret);
